@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JobFinder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>Job Finder</h2>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#jobs">Jobs</a>
+
+            <a href="#applications">
+                My Applications
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section id="home">
+
+        <h1>Find Your Next Opportunity</h1>
+
+        <p>
+            Discover jobs that match your
+            education, experience and skills.
+        </p>
+
+        <button onclick="document.getElementById('jobs').scrollIntoView()">
+            Browse Jobs
+        </button>
+
+    </section>
+
+
+    <section id="jobs">
+
+        <h2>Available Jobs</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search jobs..."
+            onkeyup="searchJobs()"
+        >
+
+        <select
+            id="educationFilter"
+            onchange="filterJobs()"
+        >
+
+            <option value="">
+                All Education
+            </option>
+
+            <option value="B.Tech">
+                B.Tech
+            </option>
+
+            <option value="BCA">
+                BCA
+            </option>
+
+            <option value="MCA">
+                MCA
+            </option>
+
+            <option value="Any Degree">
+                Any Degree
+            </option>
+
+        </select>
+
+
+        <div id="jobContainer">
+
+            <!-- JavaScript will put job cards here -->
+
+        </div>
+
+    </section>
+
+
+    <section id="applicationForm">
+
+        <h2>Apply for a Job</h2>
+
+        <form id="application">
+
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+
+            <label>Personal Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter your age"
+                required
+            >
+
+
+            <label>Education Qualification</label>
+
+            <select id="education" required>
+
+                <option value="">
+                    Select education
+                </option>
+
+                <option value="B.Tech">
+                    B.Tech
+                </option>
+
+                <option value="BCA">
+                    BCA
+                </option>
+
+                <option value="MCA">
+                    MCA
+                </option>
+
+                <option value="Any Degree">
+                    Other Degree
+                </option>
+
+            </select>
+
+
+            <label>Work Experience</label>
+
+            <input
+                type="number"
+                id="experience"
+                placeholder="Years of experience"
+                min="0"
+                required
+            >
+
+
+            <label>Skills</label>
+
+            <input
+                type="text"
+                id="skills"
+                placeholder="Example: Java, Python, SQL"
+            >
+
+
+            <button type="submit">
+                Submit Application
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section id="applications">
+
+        <h2>My Applications</h2>
+
+        <div id="applicationContainer">
+
+            <!-- Submitted applications will appear here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript file -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
